@@ -39,3 +39,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     supervise_process(args.name, args.wait, args.tries, args.interval)
+    
+    def lambda_handler(event, context):
+    supervise_process(event['name'], event['wait'], event['tries'], event['interval'])
